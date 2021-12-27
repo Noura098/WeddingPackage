@@ -6,3 +6,28 @@
 //
 
 import Foundation
+
+struct User {
+    var id = ""
+    var firstName = ""
+    var lastName = ""
+    var imageUrl = ""
+    var email = ""
+    var city = ""
+    
+    init(dict:[String:Any]) {
+        if let id = dict["id"] as? String,
+           let firstName = dict["First Name"] as? String,
+           let lastName = dict["Last Name"] as? String,
+           let imageUrl = dict["imageUrl"] as? String,
+           let city = dict["city"] as? String,
+           let email = dict["email"] as? String {
+            self.firstName = firstName
+            self.lastName = lastName
+            self.id = id
+            self.email = email
+            self.city = city
+            self.imageUrl = imageUrl
+        }
+    }
+}
