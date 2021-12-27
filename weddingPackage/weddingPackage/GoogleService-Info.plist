@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>49671756522-jophtfjt5oufkdips72e2u00g0h40d8h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.49671756522-jophtfjt5oufkdips72e2u00g0h40d8h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBCZl7VkcXYZFNndg4z2nsb_-tDOAWQiMQ</string>
+	<key>GCM_SENDER_ID</key>
+	<string>49671756522</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Noura.weddingPackage</string>
+	<key>PROJECT_ID</key>
+	<string>weddingpackage-5f04b</string>
+	<key>STORAGE_BUCKET</key>
+	<string>weddingpackage-5f04b.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:49671756522:ios:05d6822acf4af6a70f1593</string>
+</dict>
+</plist>
