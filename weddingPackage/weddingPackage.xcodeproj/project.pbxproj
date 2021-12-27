@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD8C67612779B04C00FDC58A /* PackageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C67602779B04C00FDC58A /* PackageCollectionViewCell.swift */; };
+		BD8C67652779DCDF00FDC58A /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C67642779DCDF00FDC58A /* PostViewController.swift */; };
+		BD8C67672779E67700FDC58A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8C67662779E67700FDC58A /* DetailsViewController.swift */; };
 		BD9B01E32778A21C001904AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BD9B01E22778A21C001904AB /* GoogleService-Info.plist */; };
 		BD9B01E62778A356001904AB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = BD9B01E52778A356001904AB /* FirebaseAuth */; };
 		BD9B01E82778A356001904AB /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = BD9B01E72778A356001904AB /* FirebaseFirestore */; };
@@ -47,6 +50,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD8C67602779B04C00FDC58A /* PackageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageCollectionViewCell.swift; sourceTree = "<group>"; };
+		BD8C67642779DCDF00FDC58A /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		BD8C67662779E67700FDC58A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		BD9B01E22778A21C001904AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BD9B01EB2778E93A001904AB /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		BD9B01EE2778E989001904AB /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -98,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD8C67682779E69800FDC58A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BDE594A92771DB4A00A0E63A /* Main.storyboard */,
+				BD8C67602779B04C00FDC58A /* PackageCollectionViewCell.swift */,
+			);
+			name = View;
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BD9B01ED2778E945001904AB /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,8 +160,8 @@
 				BDE594A52771DB4A00A0E63A /* SceneDelegate.swift */,
 				BD9B01F02778EAA8001904AB /* Utill */,
 				BD9B01ED2778E945001904AB /* Model */,
-				BDE594A92771DB4A00A0E63A /* Main.storyboard */,
-				BDE594DB2771E34B00A0E63A /* controll */,
+				BD8C67682779E69800FDC58A /* View */,
+				BDE594DB2771E34B00A0E63A /* Controll */,
 				BDE594AC2771DB4B00A0E63A /* Assets.xcassets */,
 				BDE594AE2771DB4B00A0E63A /* LaunchScreen.storyboard */,
 				BDE594B12771DB4B00A0E63A /* Info.plist */,
@@ -171,15 +187,17 @@
 			path = weddingPackageUITests;
 			sourceTree = "<group>";
 		};
-		BDE594DB2771E34B00A0E63A /* controll */ = {
+		BDE594DB2771E34B00A0E63A /* Controll */ = {
 			isa = PBXGroup;
 			children = (
 				BDE594D32771E26000A0E63A /* LandingViewController.swift */,
 				BDE594D52771E2A000A0E63A /* LoginViewController.swift */,
 				BDE594D72771E2D900A0E63A /* RegisterViewController.swift */,
 				BDE594D92771E31C00A0E63A /* HomeViewController.swift */,
+				BD8C67642779DCDF00FDC58A /* PostViewController.swift */,
+				BD8C67662779E67700FDC58A /* DetailsViewController.swift */,
 			);
-			name = controll;
+			name = Controll;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,15 +340,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8C67652779DCDF00FDC58A /* PostViewController.swift in Sources */,
 				BD9B01F42778EBD6001904AB /* ImageView.swift in Sources */,
 				BDE594A42771DB4A00A0E63A /* AppDelegate.swift in Sources */,
 				BDE594D42771E26000A0E63A /* LandingViewController.swift in Sources */,
 				BDE594D82771E2D900A0E63A /* RegisterViewController.swift in Sources */,
 				BDE594D62771E2A000A0E63A /* LoginViewController.swift in Sources */,
 				BD9B01EF2778E989001904AB /* User.swift in Sources */,
+				BD8C67612779B04C00FDC58A /* PackageCollectionViewCell.swift in Sources */,
 				BDE594DA2771E31C00A0E63A /* HomeViewController.swift in Sources */,
 				BD9B01F22778EB74001904AB /* Activity.swift in Sources */,
 				BD9B01EC2778E93A001904AB /* Post.swift in Sources */,
+				BD8C67672779E67700FDC58A /* DetailsViewController.swift in Sources */,
 				BDE594A62771DB4A00A0E63A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
