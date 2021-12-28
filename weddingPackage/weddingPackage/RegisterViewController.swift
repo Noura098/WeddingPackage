@@ -92,7 +92,7 @@ class RegisterViewController: UIViewController {
 }
 }
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-    
+
     @objc func selectImage() {
         showAlert()
     }

@@ -5,7 +5,7 @@
 //  Created by NoON .. on 22/05/1443 AH.
 //
 
-import Foundation
+
 import UIKit
 struct Activity {
     static func showIndicator(parentView:UIView,childView activityIndicator:UIActivityIndicatorView) {
