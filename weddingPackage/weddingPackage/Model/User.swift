@@ -17,8 +17,8 @@ struct User {
     
     init(dict:[String:Any]) {
         if let id = dict["id"] as? String,
-           let firstName = dict["First Name"] as? String,
-           let lastName = dict["Last Name"] as? String,
+           let firstName = dict["firstName"] as? String,
+           let lastName = dict["lastName"] as? String,
            let imageUrl = dict["imageUrl"] as? String,
            let city = dict["city"] as? String,
            let email = dict["email"] as? String {

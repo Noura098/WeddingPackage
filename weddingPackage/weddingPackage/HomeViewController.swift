@@ -13,7 +13,6 @@ class HomeViewController: UIViewController {
     var selectedPostImage:UIImage?
     
     @IBOutlet weak var imageHeader: UIImageView!
-    
     @IBOutlet weak var packagesCollectionView: UICollectionView!{
         didSet {
             packagesCollectionView.delegate = self
@@ -47,7 +46,7 @@ class HomeViewController: UIViewController {
                                    let userData = userSnapshot.data(){
                                     let user = User(dict:userData)
                                     let post = Post(dict:postData,id:diff.document.documentID,user:user)
-//                                    self.packagesCollectionView.beginUpdates()
+                                
                                     if snapshot.documentChanges.count != 1 {
                                         self.posts.append(post)
                                         self.packagesCollectionView.insertItems(at: [IndexPath(item: self.posts.count - 1, section: 0)])

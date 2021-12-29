@@ -18,7 +18,7 @@ struct Post {
   var createdAt:Timestamp?
     
     init(dict:[String:Any],id:String,user:User) {
-        if let namePackage = dict["name Package"] as? String,
+        if let namePackage = dict["packageName"] as? String,
            let description = dict["description"] as? String,
            let imageUrl = dict["imageUrl"] as? String,
 //           let packageImage = dict["package Image"] as? String,

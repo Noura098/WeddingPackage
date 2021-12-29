@@ -51,7 +51,8 @@ class PostViewController: UIViewController {
                     print("Error in db delete",error)
                 }else{
                     // Create a reference to the file to delete
-                    let storageRef = Storage.storage().reference(withPath: "post/\(selectedPost.user.id)/\(selectedPost.id)")
+                    print(selectedPost.user.id,selectedPost.id)
+                    let storageRef = Storage.storage().reference(withPath: "posts/\(selectedPost.user.id)/\(selectedPost.id)")
                     // Delete the file
                     storageRef.delete { error in
                         if let error = error {
