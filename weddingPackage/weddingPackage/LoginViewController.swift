@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         toolBar.setItems([flexibleSpace,doneButton], animated: false)
        
        passwordTextField.inputAccessoryView = toolBar
+        emailTextField.inputAccessoryView = toolBar
     }
     @objc func doneClicked () {
         view.endEditing(true)

@@ -12,6 +12,14 @@ class PostViewController: UIViewController {
     var selectedPostImage:UIImage?
     
     @IBOutlet weak var postDescriptionTV: UITextView!
+//    {
+//        didSet {
+//            CGRect.self frame = postDescriptionTV.frame;
+//    frame.size.height = postDescriptionTV.contentSize.height;
+//    postDescriptionTV.frame = frame;
+//        }
+//
+//    }
     @IBOutlet weak var descriptionLabel: UILabel!{
         didSet {
             descriptionLabel.text =  "Description".localized
