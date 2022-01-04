@@ -9,8 +9,6 @@ import UIKit
 import Firebase
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
-
-    
     @IBOutlet weak var emailLabel: UILabel!{
         didSet {
             emailLabel.text = "email".localized
@@ -33,7 +31,6 @@ class LoginViewController: UIViewController {
             newCustomerLabel.text = "NewCustomer".localized
         }
     }
-    
     @IBOutlet weak var signinLabel: UILabel!{
         didSet {
             signinLabel.text = "Signin".localized
@@ -47,6 +44,17 @@ class LoginViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        let toolBar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: .plain, target: self, action: #selector(self.doneClicked))
+
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+       
+       passwordTextField.inputAccessoryView = toolBar
+    }
+    @objc func doneClicked () {
+        view.endEditing(true)
     }
     @IBAction func handleLogin(_ sender: Any) {
         if let email = emailTextField.text,
@@ -63,15 +71,14 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
     @IBAction func iconAction(_ sender: AnyObject) {
         passwordTextField.isSecureTextEntry.toggle()
            if passwordTextField.isSecureTextEntry {
-               if let image = UIImage(systemName: "eye.fill") {
+               if let image = UIImage(systemName: "eye.slash.fill") {
                    sender.setImage(image, for: .normal)
                }
            } else {
-               if let image = UIImage(systemName: "eye.slash.fill") {
+               if let image = UIImage(systemName: "eye.fill") {
                    sender.setImage(image, for: .normal)
                }
            }

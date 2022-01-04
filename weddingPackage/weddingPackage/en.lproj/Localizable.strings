@@ -8,12 +8,13 @@
 // Landing
 "Welcome" = "We are happy to be a part of your wedding night";
 "WeddingPacage" = "Wedding Pacage";
+"Done" = "Done";
 //Login
 "email" = "email";
 "password" = "password";
 "Signin" = "sign in";
 "createyourAccount" = "create your Account";
-"NewCustomer" = "New Customer";
+"NewCustomer" = "New Customer?";
 // Register
 "firstName" = "First Name";
 "lastName" = "Last Name";
