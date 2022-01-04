@@ -22,12 +22,48 @@ class RegisterViewController: UIViewController {
         }
     }
     @IBOutlet weak var firstNameTextField: UITextField!
+    @IBOutlet weak var firstNameLabel: UILabel!
+    {
+        didSet {
+            firstNameLabel.text = "firstName".localized
+        }
+    }
     @IBOutlet weak var lastNameTextField: UITextField!
+    @IBOutlet weak var lastNameLabel: UILabel!{
+        didSet {
+            lastNameLabel.text = "lastName".localized
+        }
+    }
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var emailLabel: UILabel!{
+        didSet {
+            emailLabel.text = "email".localized
+        }
+    }
     @IBOutlet weak var cityTextField: UITextField!
+    @IBOutlet weak var cityLabel: UILabel!{
+        didSet {
+            cityLabel.text = "city".localized
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!{
+        didSet {
+           passwordLabel.text = "password".localized
+        }
+    }
     
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordLabel: UILabel!{
+        didSet {
+          confirmPasswordLabel.text = "passwordComfirm".localized
+        }
+    }
+    @IBOutlet weak var registerButton: UIButton!{
+        didSet{
+            registerButton.setTitle("regester".localized, for: .normal)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePickerController.delegate = self
@@ -46,6 +82,8 @@ class RegisterViewController: UIViewController {
         Activity.showIndicator(parentView: self.view, childView: activityIndicator)
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
+                Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                            Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                 print("Registration Auth Error",error.localizedDescription)
             }
             if let authResult = authResult {
@@ -54,10 +92,14 @@ class RegisterViewController: UIViewController {
                 uploadMeta.contentType = "image/jpeg"
                 storageRef.putData(imageData, metadata: uploadMeta) { storageMeta, error in
                     if let error = error {
+                        Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                                    Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                         print("Registration Storage Error",error.localizedDescription)
                     }
                     storageRef.downloadURL { url, error in
                         if let error = error {
+                            Alert.showAlert(strTitle: "Error", strMessage: error.localizedDescription, viewController: self)
+                                                        Activity.removeIndicator(parentView: self.view, childView: self.activityIndicator)
                             print("Registration Storage Download Url Error",error.localizedDescription)
                         }
                         if let url = url {
@@ -90,6 +132,31 @@ class RegisterViewController: UIViewController {
     }
     
 }
+    
+    @IBAction func changePasswordVisibility(_ sender: AnyObject) {
+        passwordTextField.isSecureTextEntry.toggle()
+           if passwordTextField.isSecureTextEntry {
+               if let image = UIImage(systemName: "eye.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           } else {
+               if let image = UIImage(systemName: "eye.slash.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           }
+       }
+    @IBAction func changePasswordCMVisibility(_ sender: AnyObject) {
+        confirmPasswordTextField.isSecureTextEntry.toggle()
+           if confirmPasswordTextField.isSecureTextEntry {
+               if let image = UIImage(systemName: "eye.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           } else {
+               if let image = UIImage(systemName: "eye.slash.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           }
+    }
 }
 extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 

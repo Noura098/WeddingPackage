@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  weddingPackage
+
+  Created by NoON .. on 29/05/1443 AH.
+  
+*/
+// Landing
+"Welcome" = "We are happy to be a part of your wedding night";
+"WeddingPacage" = "Wedding Pacage";
+//Login
+"email" = "email";
+"password" = "password";
+"Signin" = "sign in";
+"createyourAccount" = "create your Account";
+"NewCustomer" = "New Customer";
+// Register
+"firstName" = "First Name";
+"lastName" = "Last Name";
+"city" = "City";
+"passwordComfirm" = "password Comfirm";
+"regester" = "Register";
+// Home
+"Logout" = "Logout";
+"packageName" = "Packag Name";
+"Price" = "Price";
+// post
+"Description" = "Description";
+"Add Post" = "Add";
+"Update Post" = "update";
+
+

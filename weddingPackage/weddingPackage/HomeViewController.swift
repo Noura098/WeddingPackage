@@ -12,6 +12,9 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     
+    let imageNames = ["nn", "de", "1"]
+      var index = 0
+      var  timer: Timer!
     @IBOutlet weak var imageHeader: UIImageView!
     @IBOutlet weak var packagesCollectionView: UICollectionView!{
         didSet {
@@ -20,10 +23,41 @@ class HomeViewController: UIViewController {
             packagesCollectionView.backgroundColor = .systemFill
         }
     }
+    @IBOutlet weak var logoutBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    imageHeader.image = UIImage(named: "nn")
+        
         getPosts()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+          timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector:
+          #selector(self.loop), userInfo: nil, repeats: true)
+    }
+    
+    @objc
+      func loop() {
+         if index != imageNames.count - 1 {
+             index += 1
+             changeImage(index: index)
+         }else {
+            index = 0
+            changeImage(index: index)
+         }
+      }
+    func changeImage(index: Int) {
+        UIView.transition(with: self.imageHeader,
+               duration: 2.0, //animation will take 2 seconds
+               options: .transitionCrossDissolve,
+               animations: {
+            self.imageHeader.image = UIImage(named:
+                   self.imageNames[index])
+               }, completion: nil)
+       }
+
+    
     func getPosts() {
         let ref = Firestore.firestore()
         ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
@@ -68,16 +102,12 @@ class HomeViewController: UIViewController {
                             self.packagesCollectionView.deleteItems(at: [IndexPath(item: updateIndex, section: 0)])
                             
                             self.packagesCollectionView.insertItems(at: [IndexPath(item: updateIndex, section: 0)])
-//                            self.packagesCollectionView.endUpdates()
                     }
                     case .removed:
                         let postId = diff.document.documentID
                         if let deleteIndex = self.posts.firstIndex(where: {$0.id == postId}){
                             self.posts.remove(at: deleteIndex)
-//                                self.packagesCollectionView.beginUpdates()
-                            self.packagesCollectionView.deleteItems(at: [IndexPath(item: deleteIndex, section: 0)])
-//                            self.packagesCollectionView.endUpdates()
-                        
+                            self.packagesCollectionView.deleteItems(at: [IndexPath(item: deleteIndex, section: 0)])                        
                         }
             }
         }
@@ -118,7 +148,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-        cell.backgroundColor = .systemBlue
+        cell.backgroundColor = .systemGray5
         return cell.configure(with: posts[indexPath.row])
         print("no dataaaaaaaa",posts[indexPath.row])
     }
@@ -126,7 +156,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, sizeForItemAT indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width * 0.493, height: self.view.frame.width * 0.45)
+        return CGSize(width: self.view.frame.width * 0.45, height: self.view.frame.width * 0.45)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.1

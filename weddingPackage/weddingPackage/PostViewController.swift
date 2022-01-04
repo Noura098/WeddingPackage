@@ -11,8 +11,14 @@ class PostViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     
-    @IBOutlet weak var postDescriptionTF: UITextField!
+    @IBOutlet weak var postDescriptionTV: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!{
+        didSet {
+            descriptionLabel.text =  "Description".localized
+        }
+    }
     @IBOutlet weak var addButton: UIButton!
+
     @IBOutlet weak var postImageView: UIImageView!{
         didSet {
             postImageView.isUserInteractionEnabled = true
@@ -21,7 +27,18 @@ class PostViewController: UIViewController {
         }
     }
     @IBOutlet weak var postPackageNameTF: UITextField!
+    @IBOutlet weak var packageNameLabel: UILabel!{
+        didSet {
+            packageNameLabel.text = "packageName".localized
+        }
+    }
+    
     @IBOutlet weak var postPriceTF: UITextField!
+    @IBOutlet weak var priceLabel: UILabel!{
+        didSet {
+            priceLabel.text = "Price".localized
+        }
+    }
     
     let activityIndicator = UIActivityIndicatorView()
     override func viewDidLoad() {
@@ -30,13 +47,13 @@ class PostViewController: UIViewController {
         let selectedImage = selectedPostImage{
             postPackageNameTF.text = selectedPost.namePackage
             postPriceTF.text = selectedPost.price
-            postDescriptionTF.text = selectedPost.description
+            postDescriptionTV.text = selectedPost.description
             postImageView.image = selectedImage
-            addButton.setTitle("Update Post", for: .normal)
+            addButton.setTitle("Update Post".localized, for: .normal)
             let deleteBarButton = UIBarButtonItem(image: UIImage(systemName: "trash.fill"), style: .plain, target: self, action: #selector(handleDelete))
             self.navigationItem.rightBarButtonItem = deleteBarButton
         }else {
-            addButton.setTitle("Add Post", for: .normal)
+            addButton.setTitle("Add Post".localized, for: .normal)
             self.navigationItem.rightBarButtonItem = nil
             
         }
@@ -71,7 +88,7 @@ class PostViewController: UIViewController {
         if let image = postImageView.image,
            let imageData = image.jpegData(compressionQuality: 0.75),
            let packageName = postPackageNameTF.text,
-           let description = postDescriptionTF.text,
+           let description = postDescriptionTV.text,
            let price = postPriceTF.text,
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)

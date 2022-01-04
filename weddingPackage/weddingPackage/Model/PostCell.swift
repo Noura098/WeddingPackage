@@ -9,8 +9,16 @@ import UIKit
 
 class PostCell: UICollectionViewCell {
     @IBOutlet weak var imagePackage: UIImageView!
-    @IBOutlet weak var namePackage: UILabel!
-    @IBOutlet weak var pricePackage: UILabel!
+    @IBOutlet weak var namePackage: UILabel!{
+        didSet {
+            namePackage.text = "packageName".localized
+        }
+    }
+    @IBOutlet weak var pricePackage: UILabel!{
+        didSet {
+            pricePackage.text = "Price".localized
+        }
+    }
     @IBOutlet weak var userImageView: UIImageView!
     
     func configure(with post:Post) -> UICollectionViewCell {

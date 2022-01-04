@@ -9,8 +9,42 @@ import UIKit
 import Firebase
 class LoginViewController: UIViewController {
     var activityIndicator = UIActivityIndicatorView()
+
+    
+    @IBOutlet weak var emailLabel: UILabel!{
+        didSet {
+            emailLabel.text = "email".localized
+        }
+    }
     @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordLabel: UILabel!{
+        didSet {
+            passwordLabel.text = "password".localized
+        }
+    }
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var signinButton: UIButton!{
+        didSet{
+            signinButton.setTitle("Signin".localized, for: .normal)
+        }
+    }
+    @IBOutlet weak var newCustomerLabel: UILabel!{
+        didSet {
+            newCustomerLabel.text = "NewCustomer".localized
+        }
+    }
+    
+    @IBOutlet weak var signinLabel: UILabel!{
+        didSet {
+            signinLabel.text = "Signin".localized
+        }
+    }
+    @IBOutlet weak var createButton: UIButton!
+    {
+        didSet{
+            createButton.setTitle("createyourAccount".localized, for: .normal)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -29,4 +63,17 @@ class LoginViewController: UIViewController {
             }
         }
     }
-}
+    
+    @IBAction func iconAction(_ sender: AnyObject) {
+        passwordTextField.isSecureTextEntry.toggle()
+           if passwordTextField.isSecureTextEntry {
+               if let image = UIImage(systemName: "eye.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           } else {
+               if let image = UIImage(systemName: "eye.slash.fill") {
+                   sender.setImage(image, for: .normal)
+               }
+           }
+       }
+    }

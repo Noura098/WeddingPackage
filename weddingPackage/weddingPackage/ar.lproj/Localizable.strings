@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  weddingPackage
+
+  Created by NoON .. on 29/05/1443 AH.
+  
+*/
+// Landing
+"Welcome" = "يسعدنا أن نكون جزءًا من ليلة زفافك";
+"WeddingPacage" = "بكجات اعراس";
+// Login
+"email" = "ايميل";
+"password" = " كلمة االمرور ";
+
+"Signin" = "تسجيل الدخول";
+"createyourAccount" = "أنشئ حسابك";
+"NewCustomer" = "مستخدم جديد";
+// Register
+"firstName" = "الاسم الاول";
+"lastName" = "الاسم الاخير";
+"city" = "المدينة";
+"passwordComfirm" = "تأكيد كلمة المرور";
+"regester" = "إنشاء حساب";
+// Home
+"Logout" = "تسجيل خروج";
+"packageName" = "اسم الباقة";
+"Price" = "السعر";
+// post
+"Description" = "الوصف";
+"Add Post" = "إضافة";
+"Update Post" = "تحديث";
+
