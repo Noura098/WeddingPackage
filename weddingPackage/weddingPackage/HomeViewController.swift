@@ -150,7 +150,7 @@ extension HomeViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
         cell.backgroundColor = .systemGray5
         return cell.configure(with: posts[indexPath.row])
-        print("no dataaaaaaaa",posts[indexPath.row])
+//        print("no dataaaaaaaa",posts[indexPath.row])
     }
 }
 extension HomeViewController: UICollectionViewDelegate {

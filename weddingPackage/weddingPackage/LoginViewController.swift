@@ -21,6 +21,15 @@ class LoginViewController: UIViewController {
         }
     }
     @IBOutlet weak var passwordTextField: UITextField!
+//    {
+//        didSet{
+//    passwordTextField.rightViewMode = UITextField.ViewMode.always
+//    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+//    let image = UIImage(named: "eye.fill")
+//    imageView.image = image
+//    passwordTextField.rightView = imageView
+//}
+//}
     @IBOutlet weak var signinButton: UIButton!{
         didSet{
             signinButton.setTitle("Signin".localized, for: .normal)
@@ -85,3 +94,4 @@ class LoginViewController: UIViewController {
            }
        }
     }
+

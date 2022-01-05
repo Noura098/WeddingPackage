@@ -15,7 +15,7 @@
 
 "Signin" = "تسجيل الدخول";
 "createyourAccount" = "أنشئ حسابك";
-"NewCustomer" = "مستخدم جديد";
+"NewCustomer" = "مستخدم جديد؟";
 // Register
 "firstName" = "الاسم الاول";
 "lastName" = "الاسم الاخير";

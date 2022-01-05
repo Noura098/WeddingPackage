@@ -65,7 +65,19 @@ class PostViewController: UIViewController {
             self.navigationItem.rightBarButtonItem = nil
             
         }
-        // Do any additional setup after loading the view.
+        let toolBar = UIToolbar()
+        let doneButton = UIBarButtonItem(title: "Done".localized, style: .plain, target: self, action: #selector(self.doneClicked))
+        doneButton.tintColor = .label
+        toolBar.sizeToFit()
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolBar.setItems([flexibleSpace,doneButton], animated: false)
+       
+        postDescriptionTV.inputAccessoryView = toolBar
+        postPackageNameTF.inputAccessoryView = toolBar
+        postPriceTF.inputAccessoryView = toolBar
+    }
+    @objc func doneClicked () {
+        view.endEditing(true)
     }
     @objc func handleDelete (_ sender: UIBarButtonItem) {
         let ref = Firestore.firestore().collection("posts")
