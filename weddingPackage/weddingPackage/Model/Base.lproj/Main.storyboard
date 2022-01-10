@@ -228,7 +228,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nkR-dJ-QGE"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" systemColor="secondaryLabelColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="aYp-n1-eRG" secondAttribute="bottom" constant="50" id="0mm-9M-W00"/>
                             <constraint firstAttribute="bottomMargin" secondItem="war-yD-uAV" secondAttribute="bottom" constant="500" id="97z-vd-FnU"/>
@@ -872,6 +872,9 @@
         <image name="plus.bubble.fill" catalog="system" width="128" height="110"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

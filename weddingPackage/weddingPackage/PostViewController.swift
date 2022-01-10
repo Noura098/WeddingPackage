@@ -71,10 +71,13 @@ class PostViewController: UIViewController {
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         toolBar.setItems([flexibleSpace,doneButton], animated: false)
-       
         postDescriptionTV.inputAccessoryView = toolBar
         postPackageNameTF.inputAccessoryView = toolBar
         postPriceTF.inputAccessoryView = toolBar
+        
+        let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     @objc func doneClicked () {
         view.endEditing(true)
