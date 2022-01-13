@@ -21,10 +21,11 @@
 		BD9B01F22778EB74001904AB /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B01F12778EB74001904AB /* Activity.swift */; };
 		BD9B01F42778EBD6001904AB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9B01F32778EBD6001904AB /* ImageView.swift */; };
 		BDAF1AE9277C95BE00AC33E0 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDAF1AE8277C95BE00AC33E0 /* Alert.swift */; };
+		BDC095A3278FFEC2002F5235 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BDC095A2278FFEC2002F5235 /* IQKeyboardManagerSwift */; };
+		BDC095A527904842002F5235 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDC095A427904842002F5235 /* Assets.xcassets */; };
 		BDE594A42771DB4A00A0E63A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE594A32771DB4A00A0E63A /* AppDelegate.swift */; };
 		BDE594A62771DB4A00A0E63A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE594A52771DB4A00A0E63A /* SceneDelegate.swift */; };
 		BDE594AB2771DB4A00A0E63A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE594A92771DB4A00A0E63A /* Main.storyboard */; };
-		BDE594AD2771DB4B00A0E63A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDE594AC2771DB4B00A0E63A /* Assets.xcassets */; };
 		BDE594B02771DB4B00A0E63A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDE594AE2771DB4B00A0E63A /* LaunchScreen.storyboard */; };
 		BDE594BB2771DB4B00A0E63A /* weddingPackageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE594BA2771DB4B00A0E63A /* weddingPackageTests.swift */; };
 		BDE594C52771DB4B00A0E63A /* weddingPackageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE594C42771DB4B00A0E63A /* weddingPackageUITests.swift */; };
@@ -67,11 +68,11 @@
 		BD9B01F12778EB74001904AB /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		BD9B01F32778EBD6001904AB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		BDAF1AE8277C95BE00AC33E0 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		BDC095A427904842002F5235 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = weddingPackage/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		BDE594A02771DB4A00A0E63A /* weddingPackage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weddingPackage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDE594A32771DB4A00A0E63A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDE594A52771DB4A00A0E63A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BDE594AA2771DB4A00A0E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BDE594AC2771DB4B00A0E63A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDE594AF2771DB4B00A0E63A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BDE594B12771DB4B00A0E63A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDE594B62771DB4B00A0E63A /* weddingPackageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weddingPackageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +92,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9B01E62778A356001904AB /* FirebaseAuth in Frameworks */,
+				BDC095A3278FFEC2002F5235 /* IQKeyboardManagerSwift in Frameworks */,
 				BD9B01E82778A356001904AB /* FirebaseFirestore in Frameworks */,
 				BD9B01EA2778A356001904AB /* FirebaseStorage in Frameworks */,
 			);
@@ -172,7 +174,7 @@
 				BD9B01ED2778E945001904AB /* Model */,
 				BD8C67682779E69800FDC58A /* View */,
 				BDE594DB2771E34B00A0E63A /* Controll */,
-				BDE594AC2771DB4B00A0E63A /* Assets.xcassets */,
+				BDC095A427904842002F5235 /* Assets.xcassets */,
 				BDE594AE2771DB4B00A0E63A /* LaunchScreen.storyboard */,
 				BDE594B12771DB4B00A0E63A /* Info.plist */,
 				BD9B01E22778A21C001904AB /* GoogleService-Info.plist */,
@@ -232,6 +234,7 @@
 				BD9B01E52778A356001904AB /* FirebaseAuth */,
 				BD9B01E72778A356001904AB /* FirebaseFirestore */,
 				BD9B01E92778A356001904AB /* FirebaseStorage */,
+				BDC095A2278FFEC2002F5235 /* IQKeyboardManagerSwift */,
 			);
 			productName = weddingPackage;
 			productReference = BDE594A02771DB4A00A0E63A /* weddingPackage.app */;
@@ -308,6 +311,7 @@
 			mainGroup = BDE594972771DB4A00A0E63A;
 			packageReferences = (
 				BD9B01E42778A356001904AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BDC095A1278FFEC2002F5235 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = BDE594A12771DB4A00A0E63A /* Products */;
 			projectDirPath = "";
@@ -328,7 +332,6 @@
 				BD0376C427818ABC004B2911 /* Localizable.strings in Resources */,
 				BDE594B02771DB4B00A0E63A /* LaunchScreen.storyboard in Resources */,
 				BD9B01E32778A21C001904AB /* GoogleService-Info.plist in Resources */,
-				BDE594AD2771DB4B00A0E63A /* Assets.xcassets in Resources */,
 				BDE594AB2771DB4A00A0E63A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC095A527904842002F5235 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -749,6 +753,14 @@
 				minimumVersion = 8.0.0;
 			};
 		};
+		BDC095A1278FFEC2002F5235 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -766,6 +778,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BD9B01E42778A356001904AB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		BDC095A2278FFEC2002F5235 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BDC095A1278FFEC2002F5235 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
