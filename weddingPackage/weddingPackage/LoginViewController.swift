@@ -21,15 +21,7 @@ class LoginViewController: UIViewController {
         }
     }
     @IBOutlet weak var passwordTextField: UITextField!
-//    {
-//        didSet{
-//    passwordTextField.rightViewMode = UITextField.ViewMode.always
-//    let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
-//    let image = UIImage(named: "eye.fill")
-//    imageView.image = image
-//    passwordTextField.rightView = imageView
-//}
-//}
+
     @IBOutlet weak var signinButton: UIButton!{
         didSet{
             signinButton.setTitle("Signin".localized, for: .normal)
@@ -51,8 +43,30 @@ class LoginViewController: UIViewController {
             createButton.setTitle("createyourAccount".localized, for: .normal)
         }
     }
+    @IBOutlet weak var viewSignIn: UIView!
+    {
+        didSet{
+            // code shado
+           viewSignIn.layer.masksToBounds = true
+            viewSignIn.layer.cornerRadius = 15
+            viewSignIn.layer.masksToBounds = false
+            viewSignIn.layer.shadowOffset = CGSize(width: 0, height: 0)
+            viewSignIn.layer.shadowColor = UIColor.black.cgColor
+            viewSignIn.layer.shadowOpacity = 0.5
+            viewSignIn.layer.cornerRadius = 5
+        }
+    }
+    @IBOutlet weak var eyeLogin: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        passwordTextField.rightView = eyeLogin
+        passwordTextField.rightViewMode = .whileEditing
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
+        
         let toolBar = UIToolbar()
         let doneButton = UIBarButtonItem(title: "Done".localized, style: .plain, target: self, action: #selector(self.doneClicked))
 

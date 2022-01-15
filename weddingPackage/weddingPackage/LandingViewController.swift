@@ -55,6 +55,12 @@ class LandingViewController: UIViewController {
             signButton.setTitle("Signin".localized, for: .normal)
         }
     }
+    @IBOutlet weak var registerButton: UIButton!{
+        didSet{
+            registerButton.setTitle("regester".localized, for: .normal)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

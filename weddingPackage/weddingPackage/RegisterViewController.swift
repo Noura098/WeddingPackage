@@ -64,12 +64,25 @@ class RegisterViewController: UIViewController {
             registerButton.setTitle("regester".localized, for: .normal)
         }
     }
+    @IBOutlet weak var eyeP1: UIButton!
+    @IBOutlet weak var eyeCP: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        passwordTextField.rightView = eyeP1
+        passwordTextField.rightViewMode = .whileEditing
+        confirmPasswordTextField.rightView = eyeCP
+        confirmPasswordTextField.rightViewMode = .whileEditing
+        
         imagePickerController.delegate = self
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
+        
+        
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     @IBAction func handleRegister(_ sender: Any) {

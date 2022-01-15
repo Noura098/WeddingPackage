@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     
-    let imageNames = ["nn", "de", "1"]
+    let imageNames = ["m", "17", "20"]
       var index = 0
       var  timer: Timer!
     @IBOutlet weak var imageHeader: UIImageView!
@@ -27,7 +27,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    imageHeader.image = UIImage(named: "nn")
+    imageHeader.image = UIImage(named: "m")
         
         getPosts()
     }
@@ -148,15 +148,14 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-        cell.backgroundColor = .systemGray5
+//        cell.backgroundColor = .systemGray
         return cell.configure(with: posts[indexPath.row])
-//        print("no dataaaaaaaa",posts[indexPath.row])
     }
 }
 extension HomeViewController: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, sizeForItemAT indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width * 0.45, height: self.view.frame.width * 0.45)
+        return CGSize(width: self.view.frame.width * 0.30, height: self.view.frame.width * 0.30)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0.1
