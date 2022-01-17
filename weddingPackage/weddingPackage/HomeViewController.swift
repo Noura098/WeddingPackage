@@ -12,7 +12,7 @@ class HomeViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
     
-    let imageNames = ["m", "17", "20"]
+    let imageNames = ["m","nn", "17", "20","d"]
       var index = 0
       var  timer: Timer!
     @IBOutlet weak var imageHeader: UIImageView!
@@ -36,6 +36,14 @@ class HomeViewController: UIViewController {
           timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector:
           #selector(self.loop), userInfo: nil, repeats: true)
     }
+    override func viewWillLayoutSubviews() {
+        let collectionFlowLayout = UICollectionViewFlowLayout()
+        if UIScreen.main.bounds.width < 400 {
+            collectionFlowLayout.itemSize = CGSize(width: 172, height: 220)
+            packagesCollectionView.collectionViewLayout = collectionFlowLayout
+        }
+    }
+    
     
     @objc
       func loop() {
@@ -56,8 +64,6 @@ class HomeViewController: UIViewController {
                    self.imageNames[index])
                }, completion: nil)
        }
-
-    
     func getPosts() {
         let ref = Firestore.firestore()
         ref.collection("posts").order(by: "createdAt",descending: true).addSnapshotListener { snapshot, error in
@@ -88,7 +94,6 @@ class HomeViewController: UIViewController {
                                       self.posts.insert(post,at:0)
                                       self.packagesCollectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
                                         }
-//                                    self.packagesCollectionView.reloadData()
                             }
                                 }
                             }
@@ -98,7 +103,6 @@ class HomeViewController: UIViewController {
                            let updateIndex = self.posts.firstIndex(where: {$0.id == postId}){
                             let newPost = Post(dict:postData, id: postId, user: currentPost.user)
                             self.posts[updateIndex] = newPost
-//                            self.packagesCollectionView.beginUpdates()
                             self.packagesCollectionView.deleteItems(at: [IndexPath(item: updateIndex, section: 0)])
                             
                             self.packagesCollectionView.insertItems(at: [IndexPath(item: updateIndex, section: 0)])
@@ -153,16 +157,18 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 extension HomeViewController: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, sizeForItemAT indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.view.frame.width * 0.30, height: self.view.frame.width * 0.30)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0.1
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, insetForSrctionAt section: Int) -> UIEdgeInsets{
-        return UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 2)
-    }
+    
+    
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, sizeForItemAT indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: self.view.frame.width * 0.49, height: self.view.frame.width * 0.49)
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 0.1
+//    }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, insetForSrctionAt section: Int) -> UIEdgeInsets{
+//        return UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 2)
+//    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PostCell
         selectedPostImage = cell.imagePackage.image

@@ -37,19 +37,16 @@ class LandingViewController: UIViewController {
             }
         }
     }
-    
     @IBOutlet weak var weddingLabel: UILabel!{
         didSet {
             weddingLabel.text = "WeddingPacage".localized
         }
     }
-    
     @IBOutlet weak var welcomeLabel: UILabel!{
         didSet {
             welcomeLabel.text = "Welcome".localized
         }
     }
-    
     @IBOutlet weak var signButton: UIButton!{
         didSet{
             signButton.setTitle("Signin".localized, for: .normal)
@@ -60,11 +57,9 @@ class LandingViewController: UIViewController {
             registerButton.setTitle("regester".localized, for: .normal)
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
     @IBAction func languageChanged(_ sender: Any) {
         if let lang = (sender as AnyObject).titleForSegment(at:(sender as AnyObject).selectedSegmentIndex)?.lowercased() {
             UserDefaults.standard.set(lang, forKey: "currentLanguage")
@@ -82,4 +77,3 @@ extension String {
         return NSLocalizedString(self, tableName: "Localizable", bundle: .main, value: self, comment: self)
     }
 }
-//

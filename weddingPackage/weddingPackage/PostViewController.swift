@@ -12,14 +12,6 @@ class PostViewController: UIViewController {
     var selectedPostImage:UIImage?
     
     @IBOutlet weak var postDescriptionTV: UITextView!
-//    {
-//        didSet {
-//            CGRect.self frame = postDescriptionTV.frame;
-//    frame.size.height = postDescriptionTV.contentSize.height;
-//    postDescriptionTV.frame = frame;
-//        }
-//
-//    }
     @IBOutlet weak var descriptionLabel: UILabel!{
         didSet {
             descriptionLabel.text =  "Description".localized
@@ -45,6 +37,19 @@ class PostViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!{
         didSet {
             priceLabel.text = "Price".localized
+        }
+    }
+    
+    @IBOutlet weak var veiwPost: UIView! {
+        didSet{
+            // code shado
+            veiwPost.layer.masksToBounds = true
+            veiwPost.layer.cornerRadius = 15
+            veiwPost.layer.masksToBounds = false
+            veiwPost.layer.shadowOffset = CGSize(width: 0, height: 0)
+            veiwPost.layer.shadowColor = UIColor.black.cgColor
+            veiwPost.layer.shadowOpacity = 0.5
+            veiwPost.layer.cornerRadius = 5
         }
     }
     
@@ -119,7 +124,6 @@ class PostViewController: UIViewController {
            let price = postPriceTF.text,
            let currentUser = Auth.auth().currentUser {
             Activity.showIndicator(parentView: self.view, childView: activityIndicator)
-//            ref.addDocument(data:)
             var postId = ""
             if let selectedPost = selectedPost {
                 postId = selectedPost.id

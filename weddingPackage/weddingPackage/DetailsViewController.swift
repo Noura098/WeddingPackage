@@ -34,6 +34,18 @@ class DetailsViewController: UIViewController {
         }
     }
     @IBOutlet weak var postDescriptionLabel: UILabel!
+    @IBOutlet weak var viewDetails: UIView!{
+        didSet{
+            // code shado
+            viewDetails.layer.masksToBounds = true
+            viewDetails.layer.cornerRadius = 15
+            viewDetails.layer.masksToBounds = false
+            viewDetails.layer.shadowOffset = CGSize(width: 0, height: 0)
+            viewDetails.layer.shadowColor = UIColor.black.cgColor
+            viewDetails.layer.shadowOpacity = 0.5
+            viewDetails.layer.cornerRadius = 5
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

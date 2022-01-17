@@ -64,18 +64,14 @@ class LoginViewController: UIViewController {
         
         passwordTextField.rightView = eyeLogin
         passwordTextField.rightViewMode = .whileEditing
-        
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
-        
         let toolBar = UIToolbar()
         let doneButton = UIBarButtonItem(title: "Done".localized, style: .plain, target: self, action: #selector(self.doneClicked))
-
         toolBar.sizeToFit()
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         toolBar.setItems([flexibleSpace,doneButton], animated: false)
        passwordTextField.inputAccessoryView = toolBar
         emailTextField.inputAccessoryView = toolBar
-        
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
