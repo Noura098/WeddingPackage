@@ -18,8 +18,6 @@ class DetailsViewController: UIViewController {
         }
     }
     @IBOutlet weak var postNamePackageLabel: UILabel!
-    
-    
     @IBOutlet weak var priceLabel1: UILabel!{
         didSet {
            priceLabel1.text = "Price".localized

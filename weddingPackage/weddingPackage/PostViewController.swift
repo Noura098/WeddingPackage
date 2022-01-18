@@ -10,7 +10,6 @@ import Firebase
 class PostViewController: UIViewController {
     var selectedPost:Post?
     var selectedPostImage:UIImage?
-    
     @IBOutlet weak var postDescriptionTV: UITextView!
     @IBOutlet weak var descriptionLabel: UILabel!{
         didSet {

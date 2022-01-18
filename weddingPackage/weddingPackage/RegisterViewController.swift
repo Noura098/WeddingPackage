@@ -146,9 +146,7 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    
 }
-    
     @IBAction func changePasswordVisibility(_ sender: AnyObject) {
         passwordTextField.isSecureTextEntry.toggle()
            if passwordTextField.isSecureTextEntry {

@@ -31,7 +31,6 @@ class HomeViewController: UIViewController {
         
         getPosts()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
           timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector:
           #selector(self.loop), userInfo: nil, repeats: true)
@@ -43,8 +42,6 @@ class HomeViewController: UIViewController {
             packagesCollectionView.collectionViewLayout = collectionFlowLayout
         }
     }
-    
-    
     @objc
       func loop() {
          if index != imageNames.count - 1 {
@@ -149,26 +146,17 @@ extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return posts.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PostCell", for: indexPath) as! PostCell
-//        cell.backgroundColor = .systemGray
+//        cell.backgroundColor = .systemBackground
+                      print("...", posts[indexPath.row])
+//                      cell.layer.borderColor = UIColor.systemBackground.cgColor
+                      cell.layer.borderWidth = 4.0
+                      cell.layer.cornerRadius = 20
         return cell.configure(with: posts[indexPath.row])
     }
 }
 extension HomeViewController: UICollectionViewDelegate {
-    
-    
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, sizeForItemAT indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: self.view.frame.width * 0.49, height: self.view.frame.width * 0.49)
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 0.1
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionView, insetForSrctionAt section: Int) -> UIEdgeInsets{
-//        return UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 2)
-//    }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! PostCell
         selectedPostImage = cell.imagePackage.image
